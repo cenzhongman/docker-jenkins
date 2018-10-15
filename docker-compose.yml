@@ -1,0 +1,13 @@
+# 作者：岑忠满
+# 日期：2018年10月15日
+# 功能：jenkins-BlueOcean
+version: '2.2'
+services:
+  jenkins:
+    image: jenkinsci/blueocean:latest
+    user: root
+    ports:
+      - 8081:8080
+    volumes:
+      - /srv/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
