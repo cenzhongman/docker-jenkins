@@ -1,15 +1,14 @@
 # 作者：岑忠满
-# 日期：2018年10月15日
+# 日期：2018年12月3日
 # 功能：jenkins-BlueOcean
 # 说明：建议用户名使用root(必须为Docker用户组)，挂载的.m2路径也需要相同用户名
-version: '2.2'
+version: '3'
 services:
   jenkins:
-    image: jenkinsci/blueocean:latest
+    image: jenkinsci/blueocean
     user: root
     ports:
-      - 8081:8080
+      - 80:8080
     volumes:
-      - /srv/jenkins:/var/jenkins_home
+      - ./data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-      - /root/.m2:/root/.m2
